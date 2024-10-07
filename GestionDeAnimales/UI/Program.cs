@@ -22,8 +22,10 @@ namespace GestionDeAnimales
                 Console.WriteLine("\n--- Menú de animales ---");
                 Console.WriteLine("1. Agregar perro");
                 Console.WriteLine("2. Agregar gato");
-                Console.WriteLine("3. Mostrar animales");
-                Console.WriteLine("4. Salir");
+                Console.WriteLine("3. Agregar pajaro");
+                Console.WriteLine("4. Mostrar animales");
+                Console.WriteLine("5. Contar animales");
+                Console.WriteLine("6. Salir");
                 Console.WriteLine("Seleccione una opción: ");
                 int opcion = int.Parse(Console.ReadLine());
 
@@ -36,9 +38,15 @@ namespace GestionDeAnimales
                         AgregarGato(animalService);
                         break;
                     case 3:
-                        animalService.MostrarAnimales();
+                        AgregarPajaro(animalService);
                         break;
                     case 4:
+                        animalService.MostrarAnimales();
+                        break;
+                    case 5:
+                        animalService.ContarAnimales();
+                        break;
+                    case 6:
                         salir = true;   
                         break;
                     default:
@@ -65,6 +73,15 @@ namespace GestionDeAnimales
             Gato gato = new Gato { Nombre = nombre };
             animalService.AgregarAnimal(gato);
             Console.WriteLine("Gato agregado exitosamente");
+        }
+
+        static void AgregarPajaro(AnimalService animalService)
+        {
+            Console.WriteLine("Ingresa el nombre del pajaro: ");
+            string nombre = Console.ReadLine();
+            Pajaro pajaro = new Pajaro { Nombre = nombre };
+            animalService.AgregarAnimal(pajaro);
+            Console.WriteLine("Pajaro agregado exitosamente");
         }
 
     }

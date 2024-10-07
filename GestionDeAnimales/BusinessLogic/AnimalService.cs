@@ -31,6 +31,29 @@ namespace GestionDeAnimales.BusinessLogic
                 animal.HacerSonido();
             }
         }
+
+        //Contar cuántos animales hay de cada tipo
+        public void ContarAnimales()
+        {
+            int perro = 0;
+            int gatos = 0;
+            int pajaros = 0;
+
+            foreach (var animal in animales)
+            {
+                if (animal is Perro)
+                    perro++;
+                else if (animal is Gato)
+                    gatos++;
+                else if (animal is Pajaro)
+                    pajaros++;
+            }
+
+            Console.WriteLine("\nCantida de animales: ");
+            Console.WriteLine($"Perros {perro}");
+            Console.WriteLine($"gatos {gatos}");
+            Console.WriteLine($"pajaros {pajaros}");
+        }
     }
 }
 

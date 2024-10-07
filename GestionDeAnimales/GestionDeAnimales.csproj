@@ -46,6 +46,7 @@
     <Compile Include="BusinessLogic\AnimalService.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Gato.cs" />
+    <Compile Include="Models\Pajaro.cs" />
     <Compile Include="Models\Perro.cs" />
     <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
